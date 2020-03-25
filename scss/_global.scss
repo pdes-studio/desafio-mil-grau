@@ -1,0 +1,233 @@
+// FontAwesome
+
+@font-face {
+	font-family: "Font Awesome 5 Free";
+	src: url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+
+%fontAwesome{
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 700;
+	font-style: normal;
+}
+
+/* https://google-webfonts-helper.herokuapp.com/fonts */
+
+/* work-sans-regular - latin */
+@font-face {
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''),
+		 url('../fonts/work-sans-v7-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('../fonts/work-sans-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* work-sans-500 - latin */
+  @font-face {
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 500;
+	src: local(''),
+		 url('../fonts/work-sans-v7-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('../fonts/work-sans-v7-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* work-sans-600 - latin */
+  @font-face {
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 600;
+	src: local(''),
+		 url('../fonts/work-sans-v7-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('../fonts/work-sans-v7-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* work-sans-700 - latin */
+  @font-face {
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: local(''),
+		 url('../fonts/work-sans-v7-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('../fonts/work-sans-v7-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* work-sans-800 - latin */
+  @font-face {
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 800;
+	src: local(''),
+		 url('../fonts/work-sans-v7-latin-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('../fonts/work-sans-v7-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+
+html {
+	font-size: 16px;
+}
+
+*{
+	font-family: 'IBM Plex Sans';
+	font-weight: $regular;
+	text-decoration: none;
+	list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body{ 
+	overflow-x: hidden;
+}
+
+@media only screen and (max-width: 1023px){
+header, .aside-menu, .container{
+	display: none;
+}
+
+.sem-tela{
+	top: 0;
+	display: block !important;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 5;
+	background: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+
+	span{ display: block; font-size: 36px;}
+}
+
+}
+
+
+@media only screen and (min-width: 1024px){
+
+	.sem-tela{ display: none;}
+
+body{
+	padding-top: 72px;
+}
+
+*:focus {
+	outline: none;
+}
+
+// .focus-visible {
+// 	box-shadow: 0 0 0 2px lighten($cor, 20%);
+// }
+
+h1, h2, h3{ font-weight: $bold; text-transform: uppercase;}
+
+h1{
+	font-size: 32px;
+}
+
+h2{ 
+	font-size: 24px;
+}
+
+h3{ font-size: 16px;
+}
+
+
+span{ font-size: 18px; }
+
+p{ 
+	line-height: 1.7; 
+	font-size: 18px; 
+	color: $preto;
+}
+
+
+
+
+.container{
+	padding: 0 20px;
+	max-width: 700px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+
+	h1{ 
+		margin: 32px 0;
+		text-align: center;
+		width: 100%;
+	}
+
+	a img{
+		width: 100%;
+		background: #e0e0e0;
+		display: block;
+		margin-bottom: 48px;
+		flex-grow: 100%;
+		border: 1px solid #e0e0e0;
+	}
+
+	.content-box{
+		width: calc(50% - 12px);
+		margin-bottom: 32px;
+		
+		h2{ margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #e0e0e0;;}
+
+		> div{
+			margin-bottom: 24px;
+			display: flex;
+			align-items: center;
+
+			> .item{
+				margin-right: 8px;
+			}
+
+			&.color .item{
+				height: 48px;
+				width: 48px;
+				padding: 4px;
+				border: 1px solid #e0e0e0;
+			}
+
+			&.tipos .item{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 48px;
+				width: 48px;
+				padding: 4px;
+				border: 1px solid #e0e0e0;
+			}
+
+			&.margens .item{
+				width: 48px;
+				border: 1px dashed black;
+			}
+
+			&.imagens .item img{
+				background: none;
+				border: 1px solid #e0e0e0;
+			}
+		}
+
+
+		&.__large{
+			width: 100% !important;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			
+			h2{ width: 100%;}
+	
+			.color{
+				width: calc(50% - 12px);
+			}
+		}
+
+	}
+
+
+}
+
+}

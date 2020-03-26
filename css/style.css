@@ -316,6 +316,7 @@ header .btn-aside {
   background: none;
   border: none;
   border-top: 4px solid black;
+  cursor: pointer;
 }
 
 header .btn-aside::before, header .btn-aside::after {

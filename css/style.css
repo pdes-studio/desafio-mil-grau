@@ -108,7 +108,21 @@ body {
     display: none;
   }
   body {
+    overflow: scroll;
+    overflow-x: hidden;
     padding-top: 72px;
+  }
+  body::-webkit-scrollbar {
+    width: 1.5em;
+  }
+  body::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-left: 1px solid #e0e0e0;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    outline: 2px solid #e0e0e0;
   }
   h1, h2, h3 {
     font-weight: 700;
@@ -306,6 +320,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   background: white;
+  z-index: 99;
 }
 
 header .btn-aside {

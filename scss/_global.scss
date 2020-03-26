@@ -203,10 +203,34 @@ a img:hover{
 			}
 
 			&.color .item{
+				position: relative;
 				height: 48px;
 				width: 48px;
 				padding: 4px;
 				border: 1px solid #e0e0e0;
+				cursor: pointer;
+
+				&:hover{
+					opacity: .5;
+					transition: .3s;
+				}
+
+				&.copy::after{
+					content: 'copiado';
+					font-size: 8px;
+					text-transform: uppercase;
+					background: black;
+					color: white;
+					padding: 2px;
+					position: absolute;
+					top: -6px;
+					left: 0;
+					right: 0;
+				}
+
+				&.copy:hover{
+					opacity: 1;
+				}
 			}
 
 			&.tipos .item{

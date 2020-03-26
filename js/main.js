@@ -1,9 +1,26 @@
+new ClipboardJS('.color .item', {
+    text: function(item){
+      const dataset = item.dataset.clipboardText = item.nextElementSibling.outerText;
+      return dataset;
+    },
+});
+
+
 const colorItem = document.querySelectorAll('.color .item');
 
 colorItem.forEach( (item) => {
   const cor = item.nextElementSibling.outerText;
   item.style.background = cor;
+
+  item.addEventListener('click', function(){
+    colorItem.forEach( (item, index) => {
+      item.classList.remove('copy')
+    });
+    this.classList.add('copy');
+  });
 });
+
+
 
 
 const tipoItem = document.querySelectorAll('.tipos .item');

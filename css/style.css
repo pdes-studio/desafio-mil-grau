@@ -190,10 +190,32 @@ body {
     margin-right: 8px;
   }
   .container .content-box > div.color .item {
+    position: relative;
     height: 48px;
     width: 48px;
     padding: 4px;
     border: 1px solid #e0e0e0;
+    cursor: pointer;
+  }
+  .container .content-box > div.color .item:hover {
+    opacity: .5;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  .container .content-box > div.color .item.copy::after {
+    content: 'copiado';
+    font-size: 8px;
+    text-transform: uppercase;
+    background: black;
+    color: white;
+    padding: 2px;
+    position: absolute;
+    top: -6px;
+    left: 0;
+    right: 0;
+  }
+  .container .content-box > div.color .item.copy:hover {
+    opacity: 1;
   }
   .container .content-box > div.tipos .item {
     display: -webkit-box;

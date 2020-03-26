@@ -1,48 +1,132 @@
 
-header{
+    header{
+        box-sizing: border-box;
         position: fixed;
         top: 0;
         height: 72px;
+        padding: 0 24px;
+        left: 0;
         width: 100%;
         border-bottom: 1px solid #e0e0e0;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        z-index: 2;
-        background: rgba(255,255,255,.9);
+        background: rgba(255,255,255,1);
 
-        span{
-            margin-left: 24px;
-            text-transform: uppercase;
-            font-weight: bold;;
+
+        .btn-aside{
+            position: relative;
+            display: block;
+            width: 32px;
+            height: 24px;
+            background: none;
+            border: none;
+            border-top: 4px solid black;
+
+            &::before, &::after{
+                position: relative;
+                content:'';
+                display: block;
+                height: 4px;
+                width: 32px;
+                margin-top: 6px;
+                background: currentColor;
+                transition: all .3s;
+            }
+
+            &.clicked{border-top-color: transparent; transition: transform .3s;}
+
+            &.clicked::before{
+                margin-top: -4px;
+                transform: rotate(135deg);
+            }
+
+            &.clicked::after{
+                margin-top: -4px;
+                transform: rotate(45deg);
+            }
         }
+
+        .notifications{
+            border: none;
+            font-size: 32px;
+            background: none;
+            position: relative;
+            cursor: pointer;
+            color: #e0e0e0;
+            
+            .fas.fa-comment-alt::before{
+                @extend %fontAwesome;
+                content: '\f27a';
+            }
+
+            // &:before{
+            //     content: '1';
+            //     position: absolute;
+            //     background: gray;
+            //     color: white;
+            //     font-size: 12px;
+            //     font-weight: bold;
+            //     border-radius: 100%;
+            //     padding: 3px 8px;
+            //     top: 0;
+            //     left: -6px;
+            // }
+
+            // &.checked::before{
+            //     visibility: hidden;
+            //     transition: .3s;
+            // }
+        }
+
     }
+
 
 .aside-menu{
     position: fixed;
-    left: 0;
-    top: 72px;
-    padding: 24px;
+    left: -340px;
+    transition: left .7s ease;
+    top: 73px;
     background: white;
+    width: 280px;
     height: calc(100% - 72px);
     border-right: 1px solid #e0e0e0;
 
-    span { 
-        font-size: 14px; 
+    > span{
+        display: block;
+        margin: 0 auto;
         text-transform: uppercase;
         font-weight: bold;;
+        text-align: center;
+        font-size: 14px;
+        margin-top: 24px;
+        color: #484848;
     }
 
     ul{
         li{
-            margin-top: 16px;
             font-size: 16px;
+            padding: 16px 24px;
+            border-bottom: 1px solid #e0e0e0;
+
+            &:first-of-type{
+                margin-top: 16px;
+                border-top: 1px solid #e0e0e0;
+            }
+            
             a{ 
                 text-transform: uppercase;
-                font-weight: bold;
-                color: black;
+                color: #434343;
+                font-weight: 500;
+                &.act{ font-weight: bold; color: black}
             }
         }
     }
+
+    &.opened{
+        left: 0;
+        transition: left .3s ease;
+    }
 }
-	
+
 
